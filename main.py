@@ -489,7 +489,6 @@ def knn(trainData, testData, labels, k):
             count[vote] = count.get(vote,0) + 1
         sortData = sorted(count.items(), key = operator.itemgetter(1), reverse = True)
         pr = sortData[0][0]
-        print(pr)
         prediction.append(pr)
     return prediction
 
@@ -508,7 +507,7 @@ def accuracy(y_true, y_pred):
     return accuracy
 
       
-prediction = knn(data_unlabel_nor_train,data_unlabel_nor_test,data_label_nor_train_label, 1)
+prediction = knn(data_unlabel_nor_train,data_unlabel_nor_test,data_label_nor_train_label, 2)
 
 
 print(accuracy(data_label_nor_test_label, prediction))
